@@ -1,9 +1,1 @@
-{
-  hike_id: @hike.id,
-  user_id: @hike.user_id,
-  start_location: @hike.start_location,
-  end_location: @hike.end_location,
-  status: @hike.status,
-  miles: @hike.miles,
-  notes: @hike.notes
-}
+render partial: "hike.json.jb", locals: {hike: @hike}
