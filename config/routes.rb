@@ -17,5 +17,7 @@ Rails.application.routes.draw do
     patch "/hikes/:id" => "hikes#update"
     delete "/hikes/:id" => "hikes#destroy"
 
-  end
+    #authentication
+    post "/sessions" => "sessions#create"
+    end
 end
