@@ -1,7 +1,11 @@
 class Api::HikesController < ApplicationController
   def index
-    @hikes = Hike.all
-    render 'index.json.jb'
+    if current_user
+      @hikes = current_user.hikes
+      render 'index.json.jb'
+    else
+      render json: {}, status: :unauthorized
+    end
   end
 
   def create
