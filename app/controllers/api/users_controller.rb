@@ -10,7 +10,8 @@ class Api::UsersController < ApplicationController
       first_name: params[:first_name],
       last_name: params[:last_name],
       email: params[:email],
-      password_digest: params[:password_digest],
+      password: params[:password],
+      password_confirmation: params[:password_confirmation],
       total_miles: params[:total_miles]
     )
     @user.save
