@@ -1,5 +1,6 @@
 class Api::HikesController < ApplicationController
   def index
+    @hikes = Hike.all
     if current_user
       @hikes = current_user.hikes
       render 'index.json.jb'
