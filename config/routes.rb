@@ -16,7 +16,12 @@ Rails.application.routes.draw do
     get "/hikes/:id" => "hikes#show"
     patch "/hikes/:id" => "hikes#update"
     delete "/hikes/:id" => "hikes#destroy"
-
+    #pictures
+    get "/pictures" => "pictures#index"
+    post "/pictures" => "pictures#create"
+    get "/pictures/:id" => "pictures#show"
+    patch "/pictures/:id" => "pictures#update"
+    delete "/pictures/:id" => "pictures#destroy"
     #authentication
     post "/sessions" => "sessions#create"
     end
