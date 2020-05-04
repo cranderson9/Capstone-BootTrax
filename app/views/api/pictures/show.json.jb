@@ -4,5 +4,5 @@
   hike_id: @picture.hike_id,
   picture_file: @picture.picture_file,
   comments: @picture.comments,
-  geo_location: @picture.geo_location,
+  geo_location: @picture.geo_location
 }

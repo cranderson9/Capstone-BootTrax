@@ -4,5 +4,6 @@
   start_location: hike.start_location,
   end_location: hike.end_location,
   miles: hike.miles,
-  notes: hike.notes
+  notes: hike.notes,
+  pictures: hike.pictures
 }
