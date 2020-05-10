@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_10_160937) do
+ActiveRecord::Schema.define(version: 2020_05_10_195024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(version: 2020_05_10_160937) do
 
   create_table "hikes", force: :cascade do |t|
     t.integer "user_id"
-    t.float "start_location"
-    t.float "end_location"
     t.decimal "miles"
     t.string "notes"
     t.datetime "created_at", precision: 6, null: false
@@ -38,7 +36,6 @@ ActiveRecord::Schema.define(version: 2020_05_10_160937) do
     t.integer "hike_id"
     t.string "picture_file"
     t.string "comments"
-    t.float "geo_location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

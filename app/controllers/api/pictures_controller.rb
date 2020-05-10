@@ -5,14 +5,13 @@ class Api::PicturesController < ApplicationController
   end
 
   def create
-    @picture = Picture.new(
-      user_id: params[:user_id],
-      hike_id: params[:hike_id],
+    @hike = Hike.find_by(id: Hike.last.id)
+    @picture = Picture.create(
+      user_id: current_user.id,
+      hike_id: @hike.id,
       picture_file: params[:picture_file],
-      comments: params[:comments],
-      # geo_location: params[:geo_location]
+      comments: params[:comments]
     )
-    @picture.save
     render 'show.json.jb'
   end
 
@@ -28,7 +27,6 @@ class Api::PicturesController < ApplicationController
       hike_id: params[:hike_id] || @picture.hike_id,
       picture_file: params[:picture_file] || @picture.picture_file,
       comments: params[:comments] || @picture.comments,
-      # geo_location: params[:geo_location] || @picture.geo_location
     )
     render 'show.json.jb'
   end

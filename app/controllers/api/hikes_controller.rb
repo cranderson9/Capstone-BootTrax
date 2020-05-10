@@ -15,21 +15,16 @@ class Api::HikesController < ApplicationController
   end
 
   def create
-    p "*************************************"
-    p current_user
-    p "*************************************"
+   
   
-    @hike = Hike.new(
+    @hike = Hike.create(
       user_id: current_user.id,
       miles: params[:miles],
       notes: params[:notes]
     )
 
-    @hike.save
     current_user.update(total_miles: current_user.total_miles + @hike.miles)
-    p "*******************************"
-    p current_user.total_miles
-    p "*******************************"
+   
     render 'show.json.jb'
   end
 
@@ -49,8 +44,6 @@ class Api::HikesController < ApplicationController
     @hike = Hike.find_by(id: params[:id])
     @hike.update(
       user_id: params[:user_id] || @hike.user_id,
-      start_location: params[:start_location] || @hike.start_location,
-      end_location: params[:end_location] || @hike.end_location,
       miles: params[:miles] || @hike.miles,
       notes: params[:notes] || @hike.notes
     )
