@@ -19,6 +19,7 @@ class Api::HikesController < ApplicationController
   
     @hike = Hike.create(
       user_id: current_user.id,
+      name: params[:name],
       miles: params[:miles],
       notes: params[:notes]
     )
@@ -44,6 +45,7 @@ class Api::HikesController < ApplicationController
     @hike = Hike.find_by(id: params[:id])
     @hike.update(
       user_id: params[:user_id] || @hike.user_id,
+      name: params[:name] || @hike.name,
       miles: params[:miles] || @hike.miles,
       notes: params[:notes] || @hike.notes
     )

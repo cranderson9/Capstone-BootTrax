@@ -1,5 +1,6 @@
 {
   id: hike.id,
+  name: hike.name,
   user_id: hike.user_id,
   miles: hike.miles,
   notes: hike.notes,
