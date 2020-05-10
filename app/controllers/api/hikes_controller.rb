@@ -15,19 +15,21 @@ class Api::HikesController < ApplicationController
   end
 
   def create
+    p "*************************************"
+    p current_user
+    p "*************************************"
+  
     @hike = Hike.new(
       user_id: current_user.id,
-      start_location: params[:start_location],
-      end_location: params[:end_location],
       miles: params[:miles],
       notes: params[:notes]
     )
 
-    # @user.total_miles = @user.total_miles + @user.hikes.last.miles
-    # p "*******************************"
-    # p total_miles
-    # p "*******************************"
     @hike.save
+    current_user.update(total_miles: current_user.total_miles + @hike.miles)
+    p "*******************************"
+    p current_user.total_miles
+    p "*******************************"
     render 'show.json.jb'
   end
 
