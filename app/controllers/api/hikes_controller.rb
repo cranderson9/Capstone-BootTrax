@@ -1,6 +1,11 @@
 class Api::HikesController < ApplicationController
   def index
+
+
     @hikes = Hike.all
+    p "*************************************"
+    p current_user
+    p "*************************************"
     if current_user
       @hikes = current_user.hikes
       render 'index.json.jb'
@@ -17,13 +22,25 @@ class Api::HikesController < ApplicationController
       miles: params[:miles],
       notes: params[:notes]
     )
+
+    # @user.total_miles = @user.total_miles + @user.hikes.last.miles
+    # p "*******************************"
+    # p total_miles
+    # p "*******************************"
     @hike.save
     render 'show.json.jb'
   end
 
   def show
-    @hike = Hike.find_by(id: params[:id])
-    render 'show.json.jb'
+    p "*************************************"
+    p current_user
+    p "*************************************"
+    if current_user
+      @hike = Hike.find_by(id: params[:id])
+      render 'show.json.jb'
+    else
+      render json: {}, status: :unauthorized
+    end
   end
 
   def update

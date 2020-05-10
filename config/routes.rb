@@ -24,5 +24,5 @@ Rails.application.routes.draw do
     delete "/pictures/:id" => "pictures#destroy"
     #authentication
     post "/sessions" => "sessions#create"
-    end
+  end
 end

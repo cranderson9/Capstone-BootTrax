@@ -10,7 +10,7 @@ class Api::PicturesController < ApplicationController
       hike_id: params[:hike_id],
       picture_file: params[:picture_file],
       comments: params[:comments],
-      geo_location: params[:geo_location]
+      # geo_location: params[:geo_location]
     )
     @picture.save
     render 'show.json.jb'
@@ -28,9 +28,8 @@ class Api::PicturesController < ApplicationController
       hike_id: params[:hike_id] || @picture.hike_id,
       picture_file: params[:picture_file] || @picture.picture_file,
       comments: params[:comments] || @picture.comments,
-      geo_location: params[:geo_location] || @picture.geo_location
+      # geo_location: params[:geo_location] || @picture.geo_location
     )
-    @picture.save
     render 'show.json.jb'
   end
 
