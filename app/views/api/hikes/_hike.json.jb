@@ -4,5 +4,5 @@
   user_id: hike.user_id,
   miles: hike.miles,
   notes: hike.notes,
-  pictures: hike.pictures
+  picture: hike.picture
 }

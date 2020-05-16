@@ -10,7 +10,6 @@ class Api::PicturesController < ApplicationController
       user_id: current_user.id,
       hike_id: @hike.id,
       picture_file: params[:picture_file],
-      comments: params[:comments]
     )
     render 'show.json.jb'
   end
@@ -25,8 +24,7 @@ class Api::PicturesController < ApplicationController
     @picture.update(
       user_id: params[:user_id] || @picture.user_id,
       hike_id: params[:hike_id] || @picture.hike_id,
-      picture_file: params[:picture_file] || @picture.picture_file,
-      comments: params[:comments] || @picture.comments,
+      picture_file: params[:picture_file] || @picture.picture_file
     )
     render 'show.json.jb'
   end

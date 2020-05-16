@@ -21,7 +21,8 @@ class Api::HikesController < ApplicationController
       user_id: current_user.id,
       name: params[:name],
       miles: params[:miles],
-      notes: params[:notes]
+      notes: params[:notes],
+      picture: params[:picture]
     )
 
     current_user.update(total_miles: current_user.total_miles + @hike.miles)

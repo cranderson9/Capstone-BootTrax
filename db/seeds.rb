@@ -11,9 +11,7 @@
 # User.create!(email: "ron@gmail.com", first_name: "Ron", last_name: "Damon", total_miles: 45.3)
 # User.create!(email: "mike@gmail.com", first_name: "Mike", last_name: "Williams", total_miles: 45.6)
 
-Hike.create!(user_id: 1, status: "finished", miles: 3.7, notes: "Weather was great. Great hike!")
-Hike.create!(user_id: 3, status: "finished", miles: 4.2, notes: "Beautiful sunrise. Great workout.")
-Hike.create!(user_id: 4, status: "finished", miles: 1.8, notes: "This one was difficult. Lots of hills!")
-Hike.create!(user_id: 1, status: "hiking")
-Hike.create!(user_id: 2, status: "paused")
+#hikes
+
+
 
