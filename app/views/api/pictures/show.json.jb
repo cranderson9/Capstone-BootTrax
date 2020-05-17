@@ -2,6 +2,6 @@
   id: @picture.id,
   user_id: @picture.user_id,
   hike_id: @picture.hike_id,
-  picture_file: @picture.picture_file,
+  picture: @picture.picture,
   comments: @picture.comments
 }

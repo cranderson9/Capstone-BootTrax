@@ -45,9 +45,9 @@ class Api::HikesController < ApplicationController
   def update
     @hike = Hike.find_by(id: params[:id])
     @hike.update(
-      user_id: params[:user_id] || @hike.user_id,
       name: params[:name] || @hike.name,
       miles: params[:miles] || @hike.miles,
+      picture: params[:picture] || @hike.picture,
       notes: params[:notes] || @hike.notes
     )
     @hike.save
